@@ -1,0 +1,1 @@
+module.exports = { content: ['./index.html','./src/**/*.{js,jsx}'], theme: { extend: { colors: { srblack: '#000000', sryellow: '#B4975A', srgray: '#2B2B2B', srwhite: '#FFFFFF' }, fontFamily: { display: ['Cinzel','serif'], body: ['Inter','sans-serif'] } } }, plugins: [] }

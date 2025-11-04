@@ -1,0 +1,1 @@
+import React from 'react';export default function DownloadCard({title,file,desc}){return (<div className='p-4 border border-srgray rounded bg-transparent'><h4 className='font-semibold'>{title}</h4><p className='text-sm mb-3'>{desc}</p><a className='cta cta-primary' href={`/public/assets/${file}`} target='_blank' rel='noreferrer'>Download</a></div>)}
