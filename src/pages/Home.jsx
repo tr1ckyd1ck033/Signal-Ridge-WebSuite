@@ -114,7 +114,7 @@ export default function Home() {
               </Link>
               <a
                 className="cta glass"
-                href="/public/assets/intake-form.pdf"
+                href="/assets/intake-form.pdf"
                 target="_blank"
                 rel="noreferrer"
               >

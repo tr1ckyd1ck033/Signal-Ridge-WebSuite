@@ -26,7 +26,7 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <Link to="/" className="block">
           <img
-            src="/public/assets/logo-white.png"
+            src="/assets/logo-white.png"
             alt="Signal Ridge"
             className="header-logo"
           />

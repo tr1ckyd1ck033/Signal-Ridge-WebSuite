@@ -157,9 +157,10 @@
   .form-input:focus {
     outline: none; /* outline-none */
     border-color: rgba(180, 151, 90, 0.6); /* border-sryellow/60 */
-  /* combine content and subtle focus ring into a single box-shadow */
-  background: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12), 0 0 0 3px rgba(180, 151, 90, 0.1);
+    /* combine content and subtle focus ring into a single box-shadow */
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12),
+      0 0 0 3px rgba(180, 151, 90, 0.1);
   }
 
   /* Footer Styles */
