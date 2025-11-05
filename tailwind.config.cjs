@@ -1,1 +1,63 @@
-module.exports = { content: ['./index.html','./src/**/*.{js,jsx}'], theme: { extend: { colors: { srblack: '#000000', sryellow: '#B4975A', srgray: '#2B2B2B', srwhite: '#FFFFFF' }, fontFamily: { display: ['Cinzel','serif'], body: ['Inter','sans-serif'] } } }, plugins: [] }
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        srblack: "#0a0a0a",
+        srgray: "rgba(255, 255, 255, 0.1)",
+        sryellow: "#B4975A",
+        srwhite: "#ffffff",
+        srgold: {
+          50: "#faf8f3",
+          100: "#f2ede1",
+          200: "#e3d9c0",
+          300: "#d2c19d",
+          400: "#c4ab7d",
+          500: "#B4975A",
+          600: "#a17e43",
+          700: "#866538",
+          800: "#6e5331",
+          900: "#5c452a",
+        },
+      },
+      fontFamily: {
+        display: ["Inter", "system-ui", "sans-serif"],
+        body: ["Inter", "system-ui", "sans-serif"],
+      },
+      animation: {
+        "fade-in": "fadeIn 0.6s ease-in-out",
+        "slide-up": "slideUp 0.5s ease-out",
+        "slide-down": "slideDown 0.5s ease-out",
+        "scale-in": "scaleIn 0.4s ease-out",
+        glow: "glow 2s ease-in-out infinite alternate",
+      },
+      keyframes: {
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        slideUp: {
+          "0%": { transform: "translateY(20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        slideDown: {
+          "0%": { transform: "translateY(-20px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        scaleIn: {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        glow: {
+          "0%": { boxShadow: "0 0 5px rgba(180, 151, 90, 0.2)" },
+          "100%": { boxShadow: "0 0 20px rgba(180, 151, 90, 0.4)" },
+        },
+      },
+      backdropBlur: {
+        xs: "2px",
+      },
+    },
+  },
+  plugins: [],
+};
