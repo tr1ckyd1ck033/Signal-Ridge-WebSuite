@@ -4,12 +4,15 @@
 
 @layer base {
   * {
-    @apply border-border;
+    box-sizing: border-box;
   }
 
   body {
-    @apply bg-srblack text-srwhite antialiased;
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: #0a0a0a; /* bg-srblack */
+  color: #ffffff; /* srwhite */
+  -webkit-font-smoothing: antialiased; /* antialiased */
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
   }
 
   /* Smooth scrolling */
@@ -114,13 +117,18 @@
 
   /* Card Styles */
   .card {
-    @apply p-6 border border-srgray rounded-xl bg-gradient-to-br from-white/5 to-transparent backdrop-blur-sm;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 1.5rem; /* p-6 */
+  border-style: solid; border-width: 1px; border-color: rgba(255,255,255,0.1); /* border border-srgray */
+  border-radius: 0.75rem; /* rounded-xl */
+  background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%); /* from-white/5 to-transparent */
+  backdrop-filter: blur(4px); /* backdrop-blur-sm */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .card:hover {
-    @apply border-sryellow/50 shadow-xl;
-    transform: translateY(-4px);
+  border-color: rgba(180,151,90,0.5); /* border-sryellow/50 */
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25); /* shadow-xl-ish */
+  transform: translateY(-4px);
     background: linear-gradient(
       135deg,
       rgba(180, 151, 90, 0.1) 0%,
@@ -130,14 +138,23 @@
 
   /* Form Inputs */
   .form-input {
-    @apply w-full mt-2 p-3 bg-white/5 border border-srgray rounded-lg backdrop-blur-sm;
-    transition: all 0.3s ease;
+  width: 100%; /* w-full */
+  margin-top: 0.5rem; /* mt-2 */
+  padding: 0.75rem; /* p-3 */
+  background: rgba(255,255,255,0.05); /* bg-white/5 */
+  border: 1px solid rgba(255,255,255,0.1); /* border border-srgray */
+  border-radius: 0.5rem; /* rounded-lg */
+  backdrop-filter: blur(4px); /* backdrop-blur-sm */
+  transition: all 0.3s ease;
   }
 
   .form-input:focus {
-    @apply outline-none border-sryellow/60 shadow-lg;
-    background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 0 3px rgba(180, 151, 90, 0.1);
+  outline: none; /* outline-none */
+  border-color: rgba(180,151,90,0.6); /* border-sryellow/60 */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* shadow-lg-ish */
+  background: rgba(255, 255, 255, 0.08);
+  /* subtle focus ring */
+  box-shadow: 0 0 0 3px rgba(180, 151, 90, 0.1);
   }
 
   /* Footer Styles */
@@ -154,7 +171,10 @@
 
   /* Nav Links */
   .nav-link {
-    @apply relative px-3 py-2 transition-all duration-300;
+  position: relative; /* relative */
+  padding-left: 0.75rem; padding-right: 0.75rem; /* px-3 */
+  padding-top: 0.5rem; padding-bottom: 0.5rem; /* py-2 */
+  transition: all 0.3s ease; /* transition-all duration-300 */
   }
 
   .nav-link::after {
