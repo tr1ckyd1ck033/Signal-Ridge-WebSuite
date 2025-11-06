@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,54 +19,66 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "py-3 bg-srblack/95 backdrop-blur-xl border-b border-srgray/50 shadow-2xl"
+          ? "py-2 bg-srblack/95 backdrop-blur-xl border-b border-srgray/50 shadow-2xl"
           : "py-6 border-b border-srgray/30"
       }`}
     >
       <div className="container mx-auto px-4">
-        <Link to="/" className="block">
-          <img
-            src="/assets/logo-white.png"
-            alt="Signal Ridge"
-            className="header-logo"
-          />
-        </Link>
+        {/* Logo container - WIDER for better proportions */}
+        <div className="flex justify-center mb-4">
+          <div className="max-w-[180px] max-w-2xl">
+            <img
+              src={
+                scrolled ? "/assets/logo-compact.png" : "/assets/logo-full.png"
+              }
+              alt="Signal Ridge"
+              className={`header-logo transition-all duration-300 ${
+                scrolled ? "max-w-[120px]" : "max-w-[700px]"
+              }`}
+            />
+          </div>
+        </div>
 
-        <nav className="mt-6 flex flex-wrap justify-center gap-2 md:gap-6">
-          <Link
-            to="/"
+        {/* Navigation - TIGHTER spacing */}
+        <nav
+          className={`flex flex-wrap justify-center gap-2 md:gap-6 transition-all duration-300 ${
+            scrolled ? "mt-2 text-sm" : "mt-4 text-base"
+          }`}
+        >
+          <a
+            href="/"
             className={`nav-link ${
               isActive("/") ? "text-sryellow" : "hover:text-sryellow"
             }`}
           >
             Home
-          </Link>
-          <Link
-            to="/services"
+          </a>
+          <a
+            href="/services"
             className={`nav-link ${
               isActive("/services") ? "text-sryellow" : "hover:text-sryellow"
             }`}
           >
             Services
-          </Link>
-          <Link
-            to="/about"
+          </a>
+          <a
+            href="/about"
             className={`nav-link ${
               isActive("/about") ? "text-sryellow" : "hover:text-sryellow"
             }`}
           >
             About
-          </Link>
-          <Link
-            to="/contact"
+          </a>
+          <a
+            href="/contact"
             className={`nav-link ${
               isActive("/contact") ? "text-sryellow" : "hover:text-sryellow"
             }`}
           >
             Contact
-          </Link>
-          <Link
-            to="/portal"
+          </a>
+          <a
+            href="/portal"
             className={`nav-link ${
               isActive("/portal") ? "text-sryellow" : "hover:text-sryellow"
             }`}
@@ -87,7 +99,7 @@ export default function Header() {
                 />
               </svg>
             </span>
-          </Link>
+          </a>
         </nav>
       </div>
     </header>
