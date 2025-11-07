@@ -62,6 +62,12 @@ export default function Header() {
             Services
           </a>
           <a
+            href="/lab7"
+            className={`nav-link ${isActive("/lab7") ? "text-sryellow" : "hover:text-sryellow"}`}
+          >
+            Lab 7
+          </a>
+          <a
             href="/about"
             className={`nav-link ${
               isActive("/about") ? "text-sryellow" : "hover:text-sryellow"
