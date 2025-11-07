@@ -1,0 +1,29 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .mountain { fill: none; stroke: #ffffff; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+      .accent { fill: none; stroke: #F1C84B; stroke-width: 10; stroke-linecap: round; }
+      .dishfill { fill: none; stroke: #ffffff; stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </defs>
+
+  <!-- Mountain ridge -->
+  <path class="mountain" d="M40 350 L150 300 L200 330 L250 280 L310 325 L365 300 L470 350"/>
+  <path class="mountain" d="M200 330 L240 305 L255 310"/>
+  <path class="mountain" d="M310 325 L340 310"/>
+
+  <!-- Dish mast at peak -->
+  <path class="dishfill" d="M250 280 L262 255 L275 265"/>
+  <!-- Dish bowl -->
+  <path class="dishfill" d="M286 240 A34 34 0 1 1 238 222"/>
+  <!-- Dish inner line -->
+  <path class="dishfill" d="M270 234 A18 18 0 1 1 245 224"/>
+  <!-- Feed arm -->
+  <path class="dishfill" d="M258 246 L275 260"/>
+
+  <!-- Signal waves -->
+  <path class="accent" d="M330 200 q30 -10 55 10"/>
+  <path class="accent" d="M318 180 q45 -15 80 12"/>
+  <path class="accent" d="M305 162 q60 -18 105 15"/>
+</svg>

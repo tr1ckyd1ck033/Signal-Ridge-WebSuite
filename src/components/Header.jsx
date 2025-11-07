@@ -27,15 +27,12 @@ export default function Header() {
         {/* Logo container - WIDER for better proportions */}
         <div className="flex justify-center mb-4">
           <div className="max-w-[180px] max-w-2xl">
-            <img
-              src={
-                scrolled ? "/assets/logo-compact.png" : "/assets/logo-full.png"
-              }
-              alt="Signal Ridge"
+            <img src="/assets/signal-ridge-mark.svg" alt="Signal Ridge" className="h-12" />
+
               className={`header-logo transition-all duration-300 ${
                 scrolled ? "max-w-[120px]" : "max-w-[700px]"
               }`}
-            />
+            
           </div>
         </div>
 
