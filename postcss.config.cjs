@@ -1,4 +1,6 @@
-{
-  "version": 2,
-  "outputDirectory": "dist"
-}
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
