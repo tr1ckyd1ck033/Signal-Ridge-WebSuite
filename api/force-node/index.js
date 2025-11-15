@@ -1,2 +1,7 @@
-export const config={runtime:"nodejs20.x"};
-export default (req,res)=>res.json({ok:true});
+export const config = {
+  runtime: "nodejs20.x",
+};
+
+export default function handler(req, res) {
+  res.status(200).json({ ok: true });
+}

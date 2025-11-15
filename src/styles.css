@@ -1,1 +1,368 @@
-body{background:#000;color:#fff;}
+/* ===========================
+   SIGNAL RIDGE MASTER THEME
+   Dark Ops / Brushed Metal UI
+   =========================== */
+
+:root {
+  --bg-black: #050505;
+  --bg-brush-1: #0b0b0b;
+  --bg-brush-2: #111111;
+  --bg-brush-3: #151515;
+
+  --gold: #b58b3b;
+  --gold-soft: #a68035;
+  --gold-ink: #8f6e30;
+
+  --text: #d4d4d4;
+  --text-soft: #b8b8b8;
+  --muted: #8d8d8d;
+
+  --shadow-gold: rgba(181, 139, 59, 0.12);
+  --shadow-hard: rgba(181, 139, 59, 0.28);
+
+  --maxw: 1200px;
+}
+
+/* Global Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Root */
+html,
+body {
+  background: var(--bg-black);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  height: 100%;
+}
+
+/* Typography */
+h1,
+h2,
+h3 {
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.08em;
+}
+
+p {
+  color: var(--text-soft);
+  margin-bottom: 1rem;
+}
+
+/* Layout */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ===========================
+   HERO + GHOST SEAL ANIMATION
+   =========================== */
+
+.hero {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--bg-black);
+}
+
+.brushed::before,
+.brushed::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Soft brushed-metal texture */
+.brushed::before {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.015) 0px,
+    rgba(255, 255, 255, 0.015) 1px,
+    rgba(0, 0, 0, 0) 2px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: soft-light;
+  opacity: 0.3;
+}
+
+/* Angular brushed-metal streaks */
+.brushed::after {
+  background: repeating-linear-gradient(
+    -20deg,
+    var(--bg-brush-1) 0px,
+    var(--bg-brush-1) 2px,
+    var(--bg-brush-2) 4px,
+    var(--bg-brush-2) 6px,
+    var(--bg-brush-3) 8px,
+    var(--bg-brush-3) 10px
+  );
+  opacity: 0.13;
+}
+
+.seal-wrap {
+  width: min(75vw, 820px);
+  transition: transform 0.6s ease;
+  filter: drop-shadow(0 26px 58px var(--shadow-gold));
+}
+
+/* Ghost Seal animation: shimmer */
+#ghost-seal .ridge-fill {
+  animation: goldSheen 6s ease-in-out infinite;
+}
+
+@keyframes goldSheen {
+  0% {
+    stop-color: #7a6127;
+  }
+  50% {
+    stop-color: var(--gold);
+  }
+  100% {
+    stop-color: #7a6127;
+  }
+}
+
+/* Floating / breathing animation */
+#ghost-seal {
+  animation: ridgeBreath 5.5s ease-in-out infinite;
+}
+
+@keyframes ridgeBreath {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Wordmark under ridge */
+.wordmark {
+  fill: url(#textGrad);
+  letter-spacing: 0.1em;
+}
+
+/* Boot-up "initializing" message */
+.init {
+  position: absolute;
+  bottom: 32px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--muted);
+  opacity: 0.8;
+  transition: opacity 0.8s ease;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  translate: -50% 0;
+  width: 2px;
+  height: 50px;
+  background: linear-gradient(var(--gold), transparent);
+  opacity: 0.55;
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.15;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(-8px);
+  }
+}
+
+/* ===========================
+   SECTION STYLING
+   =========================== */
+
+.section {
+  padding: 100px 0;
+  background: #080808;
+}
+
+.section.alt {
+  background: #0a0a0a;
+}
+
+.divider {
+  height: 1px;
+  width: 40%;
+  margin: 24px 0 40px 0;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.5;
+}
+
+/* GRID (Mandate section) */
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  gap: 48px;
+}
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* ===========================
+   DIVISION CARDS
+   =========================== */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+}
+
+.card {
+  grid-column: span 6;
+  background: #0c0c0c;
+  border: 1px solid rgba(181, 139, 59, 0.12);
+  border-radius: 12px;
+  padding: 22px 20px;
+  transition: 0.2s ease border-color, 0.2s ease transform, 0.2s ease box-shadow;
+}
+
+.card:hover {
+  border-color: rgba(181, 139, 59, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px var(--shadow-gold);
+}
+
+@media (max-width: 900px) {
+  .card {
+    grid-column: span 12;
+  }
+}
+
+/* ===========================
+   HORIZONTAL SCROLLER TILES
+   =========================== */
+
+.hscroller {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 6px;
+}
+
+.tile {
+  flex: 0 0 360px;
+  background: #0c0c0c;
+  border: 1px solid rgba(181, 139, 59, 0.14);
+  border-radius: 12px;
+  padding: 20px;
+  scroll-snap-align: start;
+  transition: 0.2s border-color ease, 0.2s box-shadow ease;
+}
+
+.tile:hover {
+  border-color: rgba(181, 139, 59, 0.34);
+  box-shadow: 0 10px 30px var(--shadow-gold);
+}
+
+/* ===========================
+   CONTACT FORM
+   =========================== */
+
+form {
+  display: grid;
+  gap: 16px;
+  max-width: 640px;
+}
+
+label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+input,
+textarea {
+  background: #0c0c0c;
+  color: #e6e6e6;
+  border: 1px solid rgba(181, 139, 59, 0.2);
+  border-radius: 10px;
+  padding: 12px 14px;
+  outline: none;
+  transition: 0.2s ease border-color, 0.2s ease box-shadow;
+}
+
+input:focus,
+textarea:focus {
+  border-color: rgba(181, 139, 59, 0.45);
+  box-shadow: 0 0 0 4px rgba(181, 139, 59, 0.12);
+}
+
+button {
+  background: linear-gradient(180deg, var(--gold), var(--gold-ink));
+  color: #0a0a0a;
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.12em;
+  transition: 0.1s transform ease, 0.15s filter ease;
+}
+
+button:hover {
+  filter: brightness(1.06);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* ===========================
+   FOOTER
+   =========================== */
+
+footer {
+  background: #070707;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.footer-text {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  font-variant-caps: small-caps;
+}
+
+/* ===========================
+   MISC
+   =========================== */
+
+.reveal {
+  opacity: 1;
+  transform: none;
+}
