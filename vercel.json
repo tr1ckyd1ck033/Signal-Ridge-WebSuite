@@ -1,28 +1,9 @@
 {
   "version": 2,
-  "build": {
-    "env": {
-      "NODE_VERSION": "20"
-    }
-  },
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
+  "functions": { "api/**/*.js": { "runtime": "nodejs20.x" } },
+  "build": { "env": { "NODE_VERSION": "20" } },
   "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
-    }
+    { "src": "package.json", "use": "@vercel/static-build", "config": { "distDir": "dist" } }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+  "routes": [ { "src": "/(.*)", "dest": "/index.html" } ]
 }
