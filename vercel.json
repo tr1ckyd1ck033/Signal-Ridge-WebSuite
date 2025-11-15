@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "build": {
-    "env": {
-      "NODE_VERSION": "20"
-    }
-  },
   "functions": {
     "api/**/*.js": {
       "runtime": "nodejs20.x"
+    }
+  },
+  "build": {
+    "env": {
+      "NODE_VERSION": "20"
     }
   },
   "builds": [
